@@ -215,6 +215,12 @@ function TypingTerminal() {
               return updated;
             });
           }
+        
+          // 👉 MOVE TO NEXT STEP
+          setTimeout(() => {
+            setStepIndex((prev) => prev + 1);
+            setCharIndex(0);
+          }, 400);
         }
       }, delay);
 
