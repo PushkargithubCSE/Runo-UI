@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@keyframes gradient {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
