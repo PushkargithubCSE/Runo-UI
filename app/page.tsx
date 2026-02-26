@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Copy, Check } from "lucide-react";
 
 export default function Home() {
   return (
@@ -282,12 +283,16 @@ agent run`;
       className="relative bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6"
     >
 
-      <button
-        onClick={copy}
-        className="absolute top-4 right-4 text-xs bg-zinc-800 hover:bg-zinc-700 px-3 py-1 rounded-md"
-      >
-        {copied ? "Copied!" : "Copy"}
-      </button>
+<button
+  onClick={copy}
+  className="absolute top-4 right-4 p-2 rounded-md bg-zinc-800 hover:bg-zinc-700 transition"
+>
+  {copied ? (
+    <Check size={16} className="text-green-400" />
+  ) : (
+    <Copy size={16} className="text-gray-400" />
+  )}
+</button>
 
       <pre className="text-green-400 text-sm whitespace-pre-wrap">
 {command}
