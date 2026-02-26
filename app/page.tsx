@@ -195,27 +195,28 @@ function TypingTerminal() {
       step.type === "output" ? 30 :
       80;
 
-    const timeout = setTimeout(() => {
-      if (charIndex < step.text.length) {
-        setLines((prev) => {
-          const updated = [...prev];
-          updated[stepIndex] =
-            (updated[stepIndex] || "") + step.text[charIndex];
-          return updated;
-        });
-        setCharIndex(charIndex + 1);
-      } else {
-        if (step.type === "loading") {
+      const text = step.text ?? "";
+
+      const timeout = setTimeout(() => {
+        if (charIndex < text.length) {
           setLines((prev) => {
             const updated = [...prev];
-            updated[stepIndex] += " ...done";
+            updated[stepIndex] =
+              (updated[stepIndex] || "") + text[charIndex];
             return updated;
           });
+      
+          setCharIndex(charIndex + 1);
+        } else {
+          if (step.type === "loading") {
+            setLines((prev) => {
+              const updated = [...prev];
+              updated[stepIndex] = "Loading...";
+              return updated;
+            });
+          }
         }
-        setStepIndex(stepIndex + 1);
-        setCharIndex(0);
-      }
-    }, delay);
+      }, delay);
 
     return () => clearTimeout(timeout);
   }, [charIndex, stepIndex]);
