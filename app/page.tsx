@@ -125,7 +125,7 @@ agent run
         <p>Built with ❤️ by Pushkar</p>
 
         <a
-          href="hhttps://github.com/PushkargithubCSE/runo.git"
+          href="https://github.com/PushkargithubCSE/runo.git"
           target="_blank"
           className="inline-block mt-2 hover:text-white"
         >
