@@ -28,7 +28,7 @@ export default function Home() {
         <h1 className="text-xl font-semibold">Runo</h1>
 
         <a
-          href="https://github.com/your-username/runo-agent"
+          href="https://github.com/PushkargithubCSE/runo.git"
           target="_blank"
           className="flex items-center gap-2 text-gray-400 hover:text-white"
         >
